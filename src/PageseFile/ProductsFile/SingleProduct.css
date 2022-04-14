@@ -1,0 +1,24 @@
+.single-pro-style{
+    /* border: 1px solid gray; */
+    box-shadow: 2px 2px 4px gray;
+    transition: all 0.4s;
+    overflow: hidden;
+
+}
+.single-pro-style img{
+    width: 100%;
+    transition: all 0.4s;
+}
+.single-pro-style button{
+    width: 100%;
+    border: none;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 20px;
+}
+.single-pro-style:hover{
+    box-shadow: 5px 5px 15px gray;
+}
+.single-pro-style:hover img{
+    transform: scale(1.1);
+}
