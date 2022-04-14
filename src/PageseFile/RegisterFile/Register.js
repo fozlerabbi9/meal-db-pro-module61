@@ -3,15 +3,15 @@ import { Button, Form } from 'react-bootstrap';
 import './Register.css';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../src/firebase.init';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const [error, setError] = useState('');
     const emailValue = useRef('');
     const passWord = useRef('');
     const confurmPass = useRef('');
-
-    const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth)
+    const navigate = useNavigate();
+    const [createUserWithEmailAndPassword, user, loading, errorr] = useCreateUserWithEmailAndPassword(auth)
 
     const submitFormFun = (e) => {
         e.preventDefault();
@@ -35,6 +35,9 @@ const Register = () => {
         // createUserWithEmailAndPassword(email, password2);
     }
 
+    if(user){
+        navigate("/");
+    }
     
     return (
         <div>
